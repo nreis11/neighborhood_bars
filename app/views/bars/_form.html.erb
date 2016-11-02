@@ -1,0 +1,23 @@
+<%= form_for [@neighborhood, @bar] do |f| %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :specialty_drink %>
+    <%= f.text_area :specialty_drink %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cash_only, "Yes" %>
+    <%= f.radio_button(:cash_only, true) %>
+    <%= f.label :cash_only, "No" %>
+    <%= f.radio_button(:cash_only, false) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
