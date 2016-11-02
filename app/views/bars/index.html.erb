@@ -1,0 +1,14 @@
+<!-- Bars index -->
+<h2><%= @neighborhood.name %>'s Bars</h2>
+
+<table class="table">
+  <tr>
+    <th>Name</th>
+  </tr>
+
+  <% @bars.each do |bar| %>
+    <tr>
+      <td><%= link_to(bar.name, neighborhood_bar_path(@neighborhood, bar)) %></td>
+    </tr>
+  <% end %>
+</table>
