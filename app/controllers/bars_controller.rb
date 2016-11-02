@@ -50,6 +50,6 @@ class BarsController < ApplicationController
   end
 
   def bar_params
-    params.require(:bar).permit(:name, :specialty_drink, :cash_only, :neighborhood_id)
+    params.require(:bar).permit(:name, :specialty_drink, :cash_only)
   end
 end

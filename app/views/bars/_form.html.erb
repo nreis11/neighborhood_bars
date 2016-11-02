@@ -11,10 +11,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :cash_only, "Yes" %>
-    <%= f.radio_button(:cash_only, true) %>
-    <%= f.label :cash_only, "No" %>
-    <%= f.radio_button(:cash_only, false) %>
+    <%= f.label :cash_only %>
+    <%= f.select :cash_only, options_for_select([["true", true], ["false", false]]) %>
   </div>
 
   <div class="actions">
