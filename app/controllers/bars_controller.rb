@@ -26,6 +26,14 @@ class BarsController < ApplicationController
     @bar = @neighborhood.bars.new
   end
 
+  def edit
+  end
+
+  def update
+    @bar.update(bar_params)
+    redirect_to neighborhood_bar_path(@neighborhood, @bar)
+  end
+
   private
 
   def set_neighborhood
