@@ -4,8 +4,19 @@ class BarsController < ApplicationController
   before_action :set_neighborhood
 
   def index
-    @neighborhood = Neighborhood.find(params[:neighborhood_id])
     @bars = @neighborhood.bars
+  end
+
+  def create
+    @bar = @neighborhood.bars.new(bar_params)
+
+    if @bar.save
+      redirect_to(neighborhood_bar_path(@neighborhood, @bar))
+    else
+      @errors = @bar.errors.full_messages
+      render "new"
+    end
+
   end
 
   def show
@@ -23,5 +34,9 @@ class BarsController < ApplicationController
 
   def set_bar
     @bar = Bar.find(params[:id])
+  end
+
+  def bar_params
+    params.require(:bar).permit(:name, :specialty_drink, :cash_only, :neighborhood_id)
   end
 end

@@ -1,0 +1,13 @@
+<h2><%= @bar.name %> </h2>
+
+<p>
+  <strong>Specialty Drink:</strong>
+  <%= @bar.specialty_drink %>
+</p>
+
+<p>
+  <strong>Cash Only:</strong>
+  <%= @bar.cash_only %>
+</p>
+
+<%= link_to("<< Back", neighborhood_bars_path(@neighborhood)) %>
