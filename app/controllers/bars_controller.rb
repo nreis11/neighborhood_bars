@@ -34,6 +34,11 @@ class BarsController < ApplicationController
     redirect_to neighborhood_bar_path(@neighborhood, @bar)
   end
 
+  def destroy
+    @bar.destroy
+    redirect_to neighborhood_bars_path(@neighborhood)
+  end
+
   private
 
   def set_neighborhood

@@ -10,6 +10,7 @@
     <tr>
       <td><%= link_to(bar.name, neighborhood_bar_path(@neighborhood, bar)) %></td>
       <td><%= link_to("Edit", edit_neighborhood_bar_path(@neighborhood, bar)) %></td>
+      <td><%= link_to("Delete", neighborhood_bar_path(@neighborhood, bar), method: "Delete") %></td>
     </tr>
   <% end %>
 </table>
